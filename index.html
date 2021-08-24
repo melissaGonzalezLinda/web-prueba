@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">  
+</head>
+
+<body >
+  <main>
+    <div class="container pt-3">
+        <div class="alert alert-danger d-none" role="alert" id="alert">
+        A simple danger alert—check it out!
+        </div>
+        <div>
+          <form> 
+            <div class="row">
+              <div class="col-sm-3 d-sm-flex align-items-center">
+                <label class="m-sm-0">Nombre: </label>
+                <input type="text" class="form-control ml-sm-2" placeholder="Nombre" id="dato1">
+              </div>
+              <div class="px-sm-2 col-sm-7 d-sm-flex align-items-center mt-2 mt-sm-0">
+                <label class="m-sm-0">Apellido: </label>
+                <input type="text"  class="form-control ml-sm-2" placeholder="Apellido" id="dato2"> 
+             </div>
+             <div class="col-sm-2 d-sm-flex justify-content-end mt-4 mt-sm-0">
+                      <button type="button" class="btn btn-info btn-block" id="add">
+                      Boton
+                      </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="mt-5">
+          <table class="table table-striped" id="tabla">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Descriction</th>
+                <th scope="col">
+                  <div class="d-flex justify-content-center">
+                    Contenido
+                  </div>
+                </th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Titulo</td>
+                <td>Descripcion</td>
+                
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </main>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
