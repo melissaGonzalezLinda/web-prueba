@@ -46,22 +46,7 @@ console.log(comida[0]);
 //let encontrarNum=array.indexOf('cinco');
 //console.log({encontrarNum});
 
-/*let datos={
-    nombre:"Karla Miranda",
-    direccion:"Xela",
-    estado:true,
-    telefonos:{
-    telefonoCasa:3646546,
-    telefonoOficina:654654
-    },
-    cordenadas:{
-    lat:35.231,
-    lng:-135.5
-    },
-    autos:['Mazda','Yaris','VMW']
-   }
-
-   console.log({datos});/*
+/*
 
    /*console.log('Telefono de casa',datos.telefonos.telefonoCasa);
    console.log('Direccion',datos.direccion);
@@ -86,14 +71,109 @@ console.log(comida[0]);
 
 const valorreturn=saludar('hola este es el nombre');
 console.log(valorreturn);*/
+/*
+let datos={
+  nombre:"Karla Miranda",
+  direccion:"Xela",
+  estado:true,
+  telefonos:{
+  telefonoCasa:3646546,
+  telefonoOficina:654654
+  },
+  cordenadas:{
+  lat:35.231,
+  lng:-135.5
+  },
+  autos:['Mazda','Yaris','VMW']
+ }
+
+ console.log({datos});
+
+datos.documentos=true;
+const converArray=Object.entries(datos);
+console.log(converArray);
+
+const primeraFincion=function(){
+  console.log('Hola esta es un función');
+ }
+ primeraFincion();
+
+const primeraFincionF=() =>{
+  console.log('Hola esta es un función de flecha');
+}
+
+primeraFincionF();
+
+ const segundaFuncion=function(nombre){
+  console.log('Hola '+nombre);
+  
+  console.log('Esta es una linea fuera de la funcion');
+  return 0;
+}
+  segundaFuncion('Estudiantes de ingenieria');
+
+ const segundaFuncionF=(nombre1, apellido) =>{
+   console.log('Esta es una funcion de flecha con parametros' +nombre1, apellido);
+ }
+
+ segundaFuncionF('Hola Cristian','Castro');
 
 const crearDatos=(nombre,apellido)=>({nombre,apellido});
+const datos1=crearDatos('Maria','Cardona');
+console.log(datos1);
 
-const datos=crearDatos('Maria','Cardona');
-console.log(datos);
-
-const TodosArgumentos=(...argu)=>{
-  console.log(argu);
+const Argumentos=(otroArgumento ,...argumento)=>{
+  console.log(otroArgumento,argumento);
 }
-   
-TodosArgumentos('Oscar', 'Carla',6,10,true,false);
+
+Argumentos('Otro Argumento','Oscar', 'Carla', 12,15,true, false);*/
+
+document.addEventListener('DOMContentLoaded',function(){
+  const dat1=document.getElementById('dato1');
+  const dat2=document.getElementById('dato2');
+  const alert=document.getElementById('alert');
+  const tab=document.getElementById('tabla');
+  const boto=document.getElementById('add');
+  let id=1;
+
+  function removeTodo(id){
+    document.getElementById(id).remove();
+   //console.log(id);
+  }
+
+  function agregar(){
+    if(dat1.value===''|| dat2.value===''){
+      alert.classList.remove('d-none');
+      alert.innerText='Los datos son requeridos';
+    } 
+    else 
+    {alert.classList.add('d-none');
+    const row =tab.insertRow();
+    row.setAttribute('id',id++);
+    row.innerHTML=`
+    <td>${dat1.value}</td>
+    <td>${dat2.value}</td>
+    <td class="text-center">
+    <input type="checkbox">
+    </td>
+    <td class="text-right">
+      <button class="btn btn-warning mb-1">
+       Editar
+      </button>
+    </td>
+    `;
+    const removeBtn=document.createElement('button');
+    removeBtn.classList.add('btn','btn-danger','mb-1','ml-1');
+    removeBtn.innerHTML=('Eliminar');
+    removeBtn.onclick=function(e){
+      removeTodo(row.getAttribute('id'));
+    }
+    row.children[3].appendChild(removeBtn);
+  }
+  }
+ 
+  boto.onclick=agregar;
+ });
+ 
+
+
