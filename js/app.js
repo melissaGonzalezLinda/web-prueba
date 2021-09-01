@@ -1,8 +1,25 @@
+//------------------------------------------------peticiones HTTP
+
+
+const apiURL ='https://reqres.in/api/users/2';
+
+fetch(apiURL).then(resp=>{
+  resp.json().then(datos=>{
+  console.log(datos);
+  console.log(datos.data.id);
+  console.log(datos.data.email);
+  });
+});
+ 
+
+//--------------------------------------------------------
 //console.log("Hola de nuevo");
 //let a=5,b=25, c=15,d=100, e=12.2;
 //let CadenaCompuesta='Buen dia';
 //let x=a+d;
 //console.log(x);
+
+
 
 /*console.log("Mensaje normal  ",x);
 console.warn("Mensaje alerta", x);
@@ -128,6 +145,44 @@ const Argumentos=(otroArgumento ,...argumento)=>{
 
 Argumentos('Otro Argumento','Oscar', 'Carla', 12,15,true, false);*/
 
+/*----------------------------------Promesas---------------------*/
+
+//import { buscarEmpleado,buscarEmpleadoAsync, tiempoLento, tiempoMedio,tiempoRapido } from "../promesas/promesas.js";
+//import { obtenerEmpleadosArr } from "../promesas/awite.js";
+
+//obtenerEmpleadosArr().then(console.table);
+
+
+//tiempoRapido.then(console.log);
+//tiempoMedio.then(console.log);
+//tiempoLento.then(console.log);
+
+//Promise.race([tiempoLento,tiempoMedio,tiempoRapido])
+ // .then(mensaje=>console.log(mensaje));
+
+/*
+
+buscarEmpleadoAsync('informatica')
+  .then(empleado=>console.log(empleado)) 
+  .catch(console.warn);
+
+const empleadoUno="ventas";
+const empleadoDos="informatica";*/
+
+//Promise.all([buscarEmpleado(empleadoUno), buscarEmpleado(empleadoDos)]).then(([ResEmpleado1,ResEmpleado2])=>{
+//  console.log(`Felicidades ${ResEmpleado1.nombre} y ${ResEmpleado2.nombre} son los mejores em
+//pleados`)
+//}).catch(err=>{alert(err)
+//}).finally(console.log("La promesa ha terminado"));
+
+
+//console.log('Fin de codigo promesas');
+
+
+//buscarEmpleado(empleadoUno).then(empleado=>{
+//  console.log(`Empleado encontrado ${empleado.nombre} el mejor empleado`);
+//}).catch(err=>{alert(err)}).finally(console.log("Fin de la promesa"));
+/*----------------------------------------------------*/
 document.addEventListener('DOMContentLoaded',function(){
   const dat1=document.getElementById('dato1');
   const dat2=document.getElementById('dato2');
